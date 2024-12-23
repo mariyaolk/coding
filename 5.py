@@ -1,11 +1,22 @@
-import math
+def list_sort(lst):
+  """Sorts a list of numbers by decreasing absolute value.
 
-def масса_воды_в_цилиндре(radius, height):
-    volume = math.pi * (radius ** 2) * height 
-    density_of_water = 1000 
-    mass = volume * density_of_water  
-    return round(mass, 2)
+  Args:
+    lst: A list of numbers.
 
-radius = 0.5 
-height = 1.0  
-print(масса_воды_в_цилиндре(radius, height)) 
+  Returns:
+    A new list sorted by decreasing absolute value.  Returns an empty list if the input is invalid.
+
+  """
+  if not isinstance(lst, list):
+    return []
+  if not all(isinstance(x, (int, float)) for x in lst):
+      return []
+
+  return sorted(lst, key=lambda x: abs(x), reverse=True)
+
+
+print(list_sort([1, -5, 2, -3, 0, 4])) 
+print(list_sort([1.5, -2.7, 0.8, -1.2])) 
+print(list_sort("not a list")) 
+print(list_sort([1,2,'a'])) 

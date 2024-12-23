@@ -1,9 +1,5 @@
-def has_adjacent_duplicates(word):
-    for i in range(len(word) - 1):
-        if word[i] == word[i + 1]:
-            return True
-    return False
+def to_list(*args):
+    return list(args)
 
-print(has_adjacent_duplicates("привет"))  
-print(has_adjacent_duplicates("колонна"))  
-print(has_adjacent_duplicates("кооператив"))  
+result = to_list(1, 2, 3, 'apple', 'banana', True)
+print(result)  
