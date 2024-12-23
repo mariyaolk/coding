@@ -1,18 +1,8 @@
-def useless(s):
-  """
-  Finds the largest number in a list and divides it by the list's length.
+def remove_extra_spaces(input_string):
+    words = input_string.strip().split()
+    cleaned_string = ' '.join(words)
+    return cleaned_string
 
-  Args:
-    s: A list of numbers.
-
-  Returns:
-    The largest number in the list divided by the list's length.
-  """
-  if not s:
-    raise ValueError("List cannot be empty")
-  if not all(isinstance(x, (int, float)) for x in s):
-      raise ValueError("List must contain only numbers")
-
-  return max(s) / len(s)
-print(useless([1, 2, 3, 4, 5])) 
-print(useless([10, 5, 20, 15])) 
+test_string = "   Привет,    мир!  Как   дела?   "
+result = remove_extra_spaces(test_string)
+print(result)
